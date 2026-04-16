@@ -1,0 +1,8 @@
+.git
+.gitignore
+README.md
+OPEN THIS!!!!
+profile_of_team
+*.log
+node_modules
+vendor/bin
