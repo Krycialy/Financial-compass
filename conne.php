@@ -16,7 +16,10 @@ try {
     $db = mysqli_connect($host, $user, $pass, $db_name, $db_port);
 } catch (mysqli_sql_exception $e) {
     http_response_code(500);
-    die('Database connection failed. Check Render env vars and database allowlist.');
+    $safe_host = $host !== '' ? $host : '(empty)';
+    $safe_user = $user !== '' ? $user : '(empty)';
+    $safe_db = $db_name !== '' ? $db_name : '(empty)';
+    die('Database connection failed: ' . $e->getMessage() . ' | host=' . $safe_host . ' port=' . $db_port . ' user=' . $safe_user . ' db=' . $safe_db);
 }
 
 if (!$db) {
