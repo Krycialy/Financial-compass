@@ -1,0 +1,518 @@
+/* CSS styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #171616;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #171616;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    background: rgb(2, 38, 27);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.logo i {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -200px; /* Start off-screen */
+    width: 200px;
+    height: 100%;
+    background: rgb(2, 38, 27);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    color: #fff;
+}
+
+.sidebar.active {
+    right: 0; /* Bring into view */
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #2c5049; /* Highlight color */
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1100; /* Above the sidebar */
+    color: #fff;
+    background: none;
+    border: none;
+    outline: none;
+}
+/* Adjust the main content to avoid overlap with fixed navbar */
+main {
+    top: 20px;
+    margin-top: -20px; /* Adjust based on your navbar height */
+}
+
+/* Responsive navbar for small screens (hamburger menu) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger button on mobile */
+    }
+
+    .sidebar {
+        display: flex; /* Ensure the sidebar is available */
+    }
+    #hero {
+        margin-bottom: 18rem; /* Add space below hero section */
+    }
+    
+    #demo {
+        margin-top: 20rem; /* Add space above demo section */
+    }
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        gap: 1rem;
+        background: #fff;
+        position: absolute;
+        top: 60px; 
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .col-md-6 {
+        width: 50%; /* Half width for medium screens */
+    }
+    .features{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px 20px 10px;
+
+    }
+    .about-us hr{
+        display: none;
+    }
+    .feature-card {
+        width: 100%; /* Cards take full width on small screens */
+        height: auto; /* Allow height to adjust dynamically */
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .navbar .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .about-us {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center content horizontally */
+        justify-content: flex-start; /* Align content at the top */
+        padding: 2rem 1rem; /* Add padding around the section */
+        width: 100%; /* Ensure it spans the full width */
+        height: auto; /* Automatically adjust height based on content */
+        box-sizing: border-box; /* Include padding in height calculation */
+    }
+    
+    .about-us .team {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align items to the top */
+        align-items: center; /* Center content horizontally */
+        gap: 2rem; /* Add space between team members */
+        width: 100%; /* Use full width of the parent container */
+        height: auto; /* Automatically adjust height based on content */
+        box-sizing: border-box; /* Ensure spacing is included in the width/height */
+    }
+    
+    .about-us .team .indteam {
+        display: flex;
+        flex-direction: column; /* Stack content inside individual team blocks */
+        align-items: center; /* Center content horizontally */
+        justify-content: flex-start; /* Align content at the top */
+        text-align: center; /* Center-align text */
+        margin: 1.5rem 0; /* Add spacing between team members */
+        width: 100%; /* Take full width of the parent container */
+        max-width: 300px; /* Limit the maximum width for each team block */
+    }
+    
+    .about-us .team .indteam img {
+        width: 100%; /* Make the image responsive */
+        max-width: 200px; /* Limit the maximum image width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 50%; /* Circular image styling */
+        margin-bottom: 1rem; /* Add space between image and text */
+    }
+    .features {
+        padding: 2rem 0 2rem 0; /* Adjust padding for smaller screens */
+        height: max-content;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+
+    .feature-card {
+        flex: 1 1 100%; /* Cards take full width */
+        height: auto; /* Allow height to adjust dynamically */
+    }
+    
+    footer {
+        display: flex; /* Enable Flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        background: rgb(1, 48, 34); /* Set background color */
+        color: #fff; /* Text color */
+        text-align: center; /* Center the text */
+        padding: 1rem; /* Add padding */
+        width: 100%; /* Ensure it spans the full width */
+        position: relative; /* Use 'relative' for proper positioning */
+        bottom: -200; /* Place it at the bottom */
+        margin-top: auto; /* Push footer down if content is short */
+    }
+    .fade-in {
+        opacity: 0; /* Initial state: Invisible */
+        transform: translateY(20px); /* Slightly move downwards */
+        transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+    }
+    
+    .fade-in.in-view {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Reset position */
+    }
+    
+}
+.fade-in {
+    opacity: 0; /* Initial state: Invisible */
+    transform: translateY(20px); /* Slightly move downwards */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+}
+
+.fade-in.in-view {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+/* Main Content */
+main {
+    margin-top: 80px; /* Prevent overlap with fixed navbar */
+}
+
+/* Active link styles for mobile */
+.nav-links a.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+/* Hero section */
+.hero {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(11, 18, 28, 0.8)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    text-shadow: 2px 2px #262a22;
+    height: 100vh; 
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: -20px;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: rgb(34, 96, 77);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: 0px 0px #262a22;
+}
+
+.cta-button:hover {
+    background-color: #f1f3f4;
+    color: #000;
+    transition: all 0.3s ease;
+    text-shadow: 0px 0px #262a22;
+}
+
+.features {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack heading and grid vertically */
+    align-items: center; /* Center align all content horizontally */
+    justify-content: center; /* Center align content vertically */
+    background: #fff;
+    padding: 4rem 2rem;
+    height: 750px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center; /* Center align text inside the section */
+}
+
+.features h2 {
+    font-weight: 1000px;
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: flex; /* Use Flexbox for a horizontal row */
+    flex-wrap: wrap; /* Wrap cards if they exceed container width */
+    gap: 2rem; /* Add space between cards */
+    justify-content: center; /* Center align the cards horizontally */
+    align-items: stretch; /* Ensure all cards have the same height */
+    width: 100%; /* Ensure grid spans the full width */
+}
+
+.feature-card {
+    background-color: rgb(16, 138, 101, 0.8);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: transform 0.3s ease;
+    width: 250px; /* Set consistent width */
+    height: 250px; /* Set consistent height */
+    display: flex; /* Enable Flexbox for internal content */
+    flex-direction: column; /* Stack content inside the card */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgb(11, 61, 46,0.8);
+    border: rgb(16, 138, 101) 1px solid;
+    transition: all 0.3s ease;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+}
+
+
+.interactive-demo {
+    background: rgb(2, 38, 27);
+    padding: 4rem 2rem;
+    text-align: center;
+    height: 800px;
+
+    /* Flexbox properties for centering */
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Optional: Arrange items in a column */
+}
+
+
+.interactive-demo h2 {
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.budget-calculator {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: 	#ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.budget-calculator input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.budget-calculator button {
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.budget-calculator button:hover {
+    background-color: #1557b0;
+}
+.about-us{
+    height: 120vh;
+}
+#result {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.about-us .team {
+    display: flex;
+    justify-content: space-evenly;  /* Horizontally centers content */
+    align-items: start;      /* Vertically centers content */
+    height: 100%;              /* Ensure the parent container has a height */
+}
+
+.about-us h1{
+    text-align: center;        /* Horizontally centers the text inside the h2 */
+    align-items: center;
+    margin: 0;
+    font-size: 2rem;                 /* Optional: Removes any default margins */
+    padding: 60px;
+    padding-bottom: 30px;
+}
+.about-us .team h1{
+    justify-items: center;
+    align-items: center;
+}
+.about-us .team .indteam{
+    height: 300px;
+    width: 300px;
+}
+
+.about-us .team .indteam h3{
+padding: 20px;
+font-weight: bold;
+text-align: center;
+}
+.about-us .team .indteam img{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+}
+.about-us .team .indteam p {
+    text-align: justify;
+}
+.about-us hr {
+    height: 1px; /* Set the thickness of the hr */
+    border: none; /* Remove the default border */
+    background-color: #000; /* Set the color of the hr */
+
+    margin: 0px 0px; /* Add spacing above and below */
+    margin-bottom: 30px;
+    width: 500px; 
+    margin: 0px 500px 30px 500px;
+}
+
+footer {
+    background: rgb(1, 48, 34);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 0px;
+    position: relative;
+    bottom: -120px;
+}

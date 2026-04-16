@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(16, 138, 101, 0.5);
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.logo i {
+    font-size: 1.5rem;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.headertext {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    margin-bottom: 1.5rem;
+}
+
+.field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    background: #e0e6e9;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.field::placeholder {
+    color: #666;
+}
+
+.input-submit {
+    width: 100%;
+    padding: 0.8rem;
+    background: #374f59;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.input-submit:hover {
+    background: #2c3e47;
+}
+
+.forget-pass {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.forget-pass a {
+    color: #0438f4;
+    text-decoration: none;
+}
+
+.forget-pass a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .forgot-password-box, .login-box {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+}

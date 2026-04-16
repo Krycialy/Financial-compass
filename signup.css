@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(16, 138, 101, 0.5);
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.logo i {
+    font-size: 1.5rem;
+}
+.map-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #555;
+}
+
+.map-icon i {
+    font-size: 1.2em;
+}
+
+#map_modal {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Row layout by default (desktop) */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    min-height: calc(100vh - 80px); /* Account for the navbar height */
+    padding: 1rem; /* Add padding for spacing */
+    gap: 0rem; /* Space between the elements */
+    text-align: center; /* Align text centrally */
+    margin-left: 200px; /* Add space on the left */
+}
+.title-description {
+    display: flex;
+    flex-direction: column; /* Stack title and description vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text alignment */
+    margin: auto; /* Center the entire container */
+    gap: 2rem; /* Adds spacing between the title and description */
+    padding: 0.5rem; /* Adds some internal spacing for better aesthetics */
+    max-width: 600px; /* Restrict width for better readability */
+    margin-top: 180px; /* Adjusted margin for better spacing */
+}
+
+.title-description h1 {
+    margin-top: 200px;
+    font-size: 55px; /* Modern, larger font for title */
+    font-weight: 700; /* Bold for emphasis */
+    color: #2c3e50; /* Sleek dark color */
+    margin: 0; /* Remove default margins */
+}
+
+
+.title-description p {
+    font-size: 18px; /* Slightly larger for readability */
+    font-weight: 400; /* Regular weight for description text */
+    color: #4a4a4a; /* Neutral gray for modern look */
+    line-height: 1.6; /* Comfortable line spacing */
+    margin: 0; /* Remove default margins */
+}
+.signup-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 400px;
+    margin-right: 8rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-box h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: #000 0.2px solid;
+    background: #ffffff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+select.field {
+    appearance: none;
+    cursor: pointer;
+}
+
+.field::placeholder {
+    color: #666;
+}
+
+.show-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+#password_warning {
+    color: #ff3333;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.links {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.links a {
+    color: #0438f4;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #374f59;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: #2c3e47;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically for smaller screens */
+        margin-left: 0; /* Remove extra margin for smaller screens */
+        margin-bottom: 5rem;
+    }
+
+    .title-description {
+        order: 1; /* Ensure title-description appears first */
+        margin-bottom: 1rem; /* Add spacing below title-description */
+        margin-top: 20px; /* Reduced margin for mobile view */
+    }
+    .title-description p{
+        display: none; /* Hide the title-description for smaller screens */
+        margin-bottom: 1rem; /* Add spacing below title-description for better layout */
+    }
+    .signup-box {
+        order: 2; /* Ensure signup-box appears after title-description */
+        width: 90%;
+        max-width: 400px;
+        margin: 1rem auto; /* Center the signup-box */
+    }
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .title-description h1 {
+        font-size: 36px;
+    }
+
+    .title-description p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title-description {
+        margin-top: 10px; /* Minimal spacing for small screens */
+    }
+
+    .title-description h1 {
+        font-size: 28px;
+    }
+
+    .title-description p {
+        font-size: 14px;
+    }
+
+    .signup-box {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,11 @@
+create database in local host name nyo ng financial
+then create kayo table ng track at user
+
+
+and user_id, budget, amount ay int, ang username, email, password, role, profile_picture, note ay varchar(100), and ang date ay date
+price, cost, fixed_cost, variable_cost, variable_costperunit ay decimal (10,2)
+
+
+sa business ang column ay user_id, date, product_name, price, quantity, cost, fixed_cost, variable_cost, variable_costperunit
+sa user ang column ay user_id, username, email, password tas check nyo yung A_I sa user_id, role, options, location, profile_picture (default > as define :"Default_pfp.jpg")
+sa track naman create kayo column for user_id, date, note, budget, amount #note wag nyo click A_I  ng user_id dito unlike sa user table
